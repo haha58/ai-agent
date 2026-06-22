@@ -65,25 +65,25 @@ const routes = app
     return c.json(res);
   })
   .post('/rpc/system/ping', validator('json', (value, c) => {
-      const parsed = PingRequestSchema.safeParse(value)
+    const parsed = PingRequestSchema.safeParse(value)
 
-      if (!parsed.success) {
-        const errorMsg = {
-          code: BizCode.COMMON_INVALID_REQUEST,
-          message: 'Invalid request payload',
-          details: parsed.error.flatten(),
-        }
-        return c.json(buildFailure(errorMsg, createMeta()), 400);
+    if (!parsed.success) {
+      const errorMsg = {
+        code: BizCode.COMMON_INVALID_REQUEST,
+        message: 'Invalid request payload',
+        details: parsed.error.flatten(),
       }
+      return c.json(buildFailure(errorMsg, createMeta()), 400);
+    }
 
-      return parsed.data
-    }),
+    return parsed.data
+  }),
     (c) => {
       const payload = c.req.valid('json')
-      const successMsg = { service: 'api', message: `pong, ${payload.name}` } 
+      const successMsg = { service: 'api', message: `pong, ${payload.name}` }
       const res = buildSuccess(successMsg, createMeta());
-    return c.json(res);
-  });
+      return c.json(res);
+    });
 
 // 把整个 app 的类型导出
 export type AppType = typeof routes;
