@@ -85,6 +85,7 @@ const routes = app
     return c.json(res);
   });
 
+// 把整个 app 的类型导出
 export type AppType = typeof routes;
 
 export default app;
