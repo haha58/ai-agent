@@ -1,11 +1,3 @@
-import {
-  Card,
-  CardContent,
-} from '@repo/ui/card'
-import { Input } from '@repo/ui/input'
-import { Label } from '@repo/ui/label'
-import { Separator } from '@repo/ui/separator'
-import { TailwindDemo } from '@repo/ui/tailwind-demo'
 import type { AppType } from '@repo/api'
 import {
   BizCode,
@@ -13,7 +5,9 @@ import {
   type PingRequest,
   type PingResponse,
 } from '@repo/contracts'
+import { Card, CardContent } from '@repo/ui/card'
 import { hc, type InferResponseType } from 'hono/client'
+
 const apiBaseUrl = process.env.API_BASE_URL ?? 'http://127.0.0.1:8787'
 const rpcPayload: PingRequest = { name: 'web' }
 
@@ -44,40 +38,42 @@ async function getPingResponse(): Promise<PingRpcResponse> {
     } satisfies ApiResponse<PingResponse>
   }
 }
+
 export default async function Home() {
   const pingResult = await getPingResponse()
   const requestBody = JSON.stringify(rpcPayload, null, 2)
   const responseBody = JSON.stringify(pingResult, null, 2)
+
   return (
-    <section className="py-10">
-      <Card className="overflow-hidden border border-border bg-background shadow-soft">
+    <section className="min-h-dvh px-4 py-10 sm:px-6 lg:px-8">
+      <Card className="mx-auto max-w-6xl overflow-hidden border-border-default bg-surface-panel shadow-md">
         <CardContent className="space-y-5 p-6">
           <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+            <p className="text-xs font-semibold uppercase text-content-tertiary">
               RPC validation
             </p>
-            <h2 className="text-2xl font-semibold tracking-tight text-foreground">
+            <h2 className="text-2xl font-semibold text-content-primary">
               Shared request and response contract
             </h2>
           </div>
-          <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
-            <span className="rounded-full border border-border px-3 py-1">
+          <div className="flex flex-wrap gap-2 text-xs text-content-secondary">
+            <span className="rounded-full border border-border-default px-3 py-1">
               POST /rpc/system/ping
             </span>
-            <span className="rounded-full border border-border px-3 py-1">
+            <span className="rounded-full border border-border-default px-3 py-1">
               {pingResult.ok ? 'ok=true' : `code=${pingResult.error.code}`}
             </span>
           </div>
           <div className="grid gap-4 lg:grid-cols-2">
-            <div className="rounded-2xl border border-border bg-muted/40 p-4">
-              <p className="text-sm font-medium text-foreground">Request</p>
-              <pre className="mt-3 overflow-x-auto whitespace-pre-wrap break-all text-xs leading-6 text-muted-foreground">
+            <div className="rounded-xl border border-border-default bg-surface-canvas p-4">
+              <p className="text-sm font-medium text-content-primary">Request</p>
+              <pre className="mt-3 overflow-x-auto whitespace-pre-wrap break-all text-xs leading-6 text-content-secondary">
                 {requestBody}
               </pre>
             </div>
-            <div className="rounded-2xl border border-border bg-muted/40 p-4">
-              <p className="text-sm font-medium text-foreground">Response</p>
-              <pre className="mt-3 overflow-x-auto whitespace-pre-wrap break-all text-xs leading-6 text-muted-foreground">
+            <div className="rounded-xl border border-border-default bg-surface-canvas p-4">
+              <p className="text-sm font-medium text-content-primary">Response</p>
+              <pre className="mt-3 overflow-x-auto whitespace-pre-wrap break-all text-xs leading-6 text-content-secondary">
                 {responseBody}
               </pre>
             </div>
