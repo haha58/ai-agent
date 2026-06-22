@@ -1,3 +1,15 @@
 packages:
   - "apps/*"
   - "packages/*"
+allowBuilds:
+  esbuild: true
+  sharp: false
+  workerd: true
+catalog:
+  typescript: 5.9.2
+  class-variance-authority: ^0.7.1
+  clsx: ^2.1.1
+  tailwind-merge: ^3.3.1
+  "@radix-ui/react-slot": ^1.2.3
+  "@radix-ui/react-label": ^2.1.7
+  "@radix-ui/react-separator": ^1.1.7

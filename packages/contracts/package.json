@@ -1,5 +1,5 @@
 {
-  "name": "@repo/ui",
+  "name": "@repo/contracts",
   "version": "0.0.0",
   "private": true,
   "exports": {
@@ -23,11 +23,6 @@
   "dependencies": {
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-     "@radix-ui/react-label": "catalog:",
-    "@radix-ui/react-separator": "catalog:",
-    "@radix-ui/react-slot": "catalog:",
-    "class-variance-authority": "catalog:",
-    "clsx": "catalog:",
-    "tailwind-merge": "catalog:"
+    "zod": "^4.4.3"
   }
 }
