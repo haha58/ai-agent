@@ -44,7 +44,8 @@ async function getPingResponse(): Promise<PingRpcResponse> {
     } satisfies ApiResponse<PingResponse>
   }
 }
-export default function Home() {
+export default async function Home() {
+  const pingResult = await getPingResponse()
   const requestBody = JSON.stringify(rpcPayload, null, 2)
   const responseBody = JSON.stringify(pingResult, null, 2)
   return (
