@@ -36,3 +36,11 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+apps/api/.dev.vars
+apps/web/.env.development
+apps/web/.env.test
+apps/web/.env.production
+apps/admin/.env.development
+apps/admin/.env.test
+apps/admin/.env.production
