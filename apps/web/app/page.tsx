@@ -1,14 +1,21 @@
-import { getWebServerEnv } from '../src/env.server'
-import { WebEnvBadge } from '../src/web-env-badge'
+import Link from 'next/link'
 
-export default async function Home() {
-  const env = getWebServerEnv()
+const links = [
+  '/verify/system/health',
+  '/verify/system/ping',
+  '/verify/catalog/list',
+  '/verify/user/profile',
+  '/verify/order/detail',
+]
 
+export default function Home() {
   return (
-    <section>
-      <span>server {env.APP_ENV}</span>
-      <span>{env.API_BASE_URL}</span>
-      <WebEnvBadge />
-    </section>
+    <main>
+      {links.map((href) => (
+        <Link key={href} href={href}>
+          {href}
+        </Link>
+      ))}
+    </main>
   )
 }
