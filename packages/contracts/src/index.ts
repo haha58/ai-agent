@@ -38,3 +38,11 @@ export type {
   OrderDetailRequest,
   OrderDetailResponse,
 } from './order/detail.contract'
+
+export {
+  HealthResponseSchema,
+} from './system/health.contract'
+
+export type {
+  HealthResponse,
+} from './system/health.contract'
