@@ -14,12 +14,13 @@
     "@repo/api": "workspace:*",
     "@repo/contracts": "workspace:*",
     "@repo/ui": "workspace:*",
+    "@tanstack/react-query": "catalog:",
     "hono": "^4.12.14",
     "next": "16.2.6",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "zod": "catalog:",
-    "@tanstack/react-query": "catalog:"
+    "uuidv7": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
