@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import catalogRoute from './routes/catalog/list.route'
+import catalogRoute from './catalog/list.route'
 import orderRoute from './order/detail.route'
 import healthRoute from './system/health.route'
 import pingRoute from './system/ping.route'
