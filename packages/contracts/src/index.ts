@@ -28,3 +28,13 @@ export type {
   PingRequest,
   PingResponse,
 } from './system/ping.contract'
+
+export {
+  OrderDetailRequestSchema,
+  OrderDetailResponseSchema,
+} from './order/detail.contract'
+
+export type {
+  OrderDetailRequest,
+  OrderDetailResponse,
+} from './order/detail.contract'
