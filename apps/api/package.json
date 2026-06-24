@@ -14,8 +14,9 @@
     "@hono/zod-validator": "^0.8.0",
     "@repo/contracts": "workspace:*",
     "hono": "^4.12.14",
-    "zod": "catalog:",
-    "uuidv7": "catalog:"
+    "jose": "^6.2.3",
+    "uuidv7": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "typescript": "catalog:",
