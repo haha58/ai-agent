@@ -1,50 +1,58 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "api",
-  "main": "src/index.ts",
-  "compatibility_date": "2026-05-14",
-  // "compatibility_flags": [
-  //   "nodejs_compat"
-  // ],
-  "vars": {
-    "APP_ENV": "development",
-  },
-  "env": {
-    "test": {
-      "vars": {
-        "APP_ENV": "test"
-      }
-    },
-    "production": {
-      "vars": {
-        "APP_ENV": "production"
-      }
-    }
-  }
-  // "kv_namespaces": [
-  //   {
-  //     "binding": "MY_KV_NAMESPACE",
-  //     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  //   }
-  // ],
-  // "r2_buckets": [
-  //   {
-  //     "binding": "MY_BUCKET",
-  //     "bucket_name": "my-bucket"
-  //   }
-  // ],
-  // "d1_databases": [
-  //   {
-  //     "binding": "MY_DB",
-  //     "database_name": "my-database",
-  //     "database_id": ""
-  //   }
-  // ],
-  // "ai": {
-  //   "binding": "AI"
-  // },
-  // "observability": {
-  //   "enabled": true,
-  //   "head_sampling_rate": 1
-  // }
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "api",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-05-14",
+	// "compatibility_flags": [
+	//   "nodejs_compat"
+	// ],
+	"vars": {
+		"APP_ENV": "development",
+	},
+	"env": {
+		"test": {
+			"vars": {
+				"APP_ENV": "test"
+			}
+		},
+		"production": {
+			"vars": {
+				"APP_ENV": "production"
+			}
+		}
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "ai-agent-local-auth",
+			"database_id": "1b529b6d-7ad8-4eff-ada2-c32ae11a9c1f",
+			"remote": true
+		}
+	]
+	// "kv_namespaces": [
+	//   {
+	//     "binding": "MY_KV_NAMESPACE",
+	//     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+	//   }
+	// ],
+	// "r2_buckets": [
+	//   {
+	//     "binding": "MY_BUCKET",
+	//     "bucket_name": "my-bucket"
+	//   }
+	// ],
+	// "d1_databases": [
+	//   {
+	//     "binding": "MY_DB",
+	//     "database_name": "my-database",
+	//     "database_id": ""
+	//   }
+	// ],
+	// "ai": {
+	//   "binding": "AI"
+	// },
+	// "observability": {
+	//   "enabled": true,
+	//   "head_sampling_rate": 1
+	// }
 }
